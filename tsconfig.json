@@ -24,8 +24,8 @@
     "src"
   ],
   "exclude": [
-    "node_modules", 
-    "coverage", 
+    "node_modules",
+    "coverage",
     "build"
-    ] // *** The files to not type check ***
+  ] // *** The files to not type check ***
 }
