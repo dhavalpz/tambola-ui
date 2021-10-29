@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
+import { Header } from "./components/Header/Header";
 /**
  * Home Page of the Application
  * @return {JSX.Element}
  */
 function App() {
-  return <div className="App">hello</div>;
+  return <Header />;
 }
 
 export default App;
