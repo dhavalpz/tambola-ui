@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
-      "dom", 
-      "dom.iterable", 
+      "dom",
+      "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
@@ -20,9 +20,12 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": [
     "node_modules", 
     "coverage", 
-    "build"] // *** The files to not type check ***
+    "build"
+    ] // *** The files to not type check ***
 }
