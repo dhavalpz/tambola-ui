@@ -1,9 +1,14 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import NumberGenerator from "./components/NumberGenerator";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it("should text render", () => {
+  render(<NumberGenerator />);
+  const text = screen.getByText(/Current Number/i);
+  expect(text).toBeInTheDocument();
+});
+it("should number render",()=>{
+  render(<NumberGenerator/>);
+  const number=screen.queryByTestId(/currentNo/i);
+  expect(number).toBeTruthy();
 });

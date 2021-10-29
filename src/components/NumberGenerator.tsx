@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import random from "lodash.random";
+import useStyles from '../styled/NumberGenerator';
 
 interface State {
   prevNumber: null | number;
@@ -8,6 +9,7 @@ interface State {
 }
 
 const NumberGenerator = () => {
+  const classes=useStyles();
   const [state, setState] = useState<State>({
     prevNumber: null,
     currentNumber: 0,
@@ -34,15 +36,15 @@ const NumberGenerator = () => {
   }, [generateNumber]);
 
   return (
-    <div>
-      <div>
-        <div>Current Number</div>
-        <div>{state.currentNumber}</div>
+    <div className={classes.container}>
+      <div className={classes.currContainer}>
+        <div className={classes.currNumberText}>Current Number</div>
+        <div className={classes.currNumber} data-testid="currentNo" >{state.currentNumber}</div>
       </div>
-
-      <div>
-        <div>Previous Number</div>
-        <div>{state.prevNumber}</div>
+      
+      <div className={classes.prevContainer}>
+        <div className={classes.prevNumberText}>Previous Number</div>
+        <div className={classes.prevNumber}>{state.prevNumber}</div>
       </div>
     </div>
   );
