@@ -9,7 +9,7 @@ import NumberGenerator from "./components/NumberGenerator";
 function App() {
   return (
     <div className="App">
-      <NumberGenerator/>
+      <NumberGenerator />
       <Board />
     </div>
   );
