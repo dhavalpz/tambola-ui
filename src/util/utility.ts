@@ -1,4 +1,4 @@
-const startValue:number=1;
-const endValue:number=90;
+const START_VALUE: number = 1;
+const END_VALUE: number = 90;
 
-export {startValue,endValue};
+export { START_VALUE, END_VALUE };

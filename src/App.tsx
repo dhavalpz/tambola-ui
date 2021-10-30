@@ -6,7 +6,11 @@ import "./App.css";
  * @return {JSX.Element}
  */
 function App() {
-  return <div className="App"><NumberGenerator /></div>;
+  return (
+    <div className="App">
+      <NumberGenerator />
+    </div>
+  );
 }
 
 export default App;
