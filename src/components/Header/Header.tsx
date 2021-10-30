@@ -14,6 +14,8 @@ enum Theme {
 }
 
 const Header: React.FC = () => {
+  const setThemeName = React.useContext(ThemeContext);
+
   const lightThemeHandler = React.useCallback(() => {
     setThemeName(Theme.lightTheme);
   }, []);
@@ -21,8 +23,6 @@ const Header: React.FC = () => {
   const darkThemeHandler = React.useCallback(() => {
     setThemeName(Theme.darkTheme);
   }, []);
-
-  const setThemeName = React.useContext(ThemeContext);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -36,6 +36,7 @@ const Header: React.FC = () => {
             color="inherit"
             size="small"
             onClick={lightThemeHandler}
+            data-testid="lightButton"
           >
             <Brightness7OutlinedIcon />
           </Button>
@@ -44,6 +45,7 @@ const Header: React.FC = () => {
             color="inherit"
             size="small"
             onClick={darkThemeHandler}
+            data-testid="darkButton"
           >
             <Brightness2OutlinedIcon />
           </Button>
