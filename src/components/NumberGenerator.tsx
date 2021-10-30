@@ -8,7 +8,7 @@ interface State {
   pickedNumbers: number[];
 }
 
-const NumberGenerator = () => {
+const NumberGenerator = ({onClick}:any) => {
   const [state, setState] = useState<State>({
     prevNumber: null,
     currentNumber: 0,
@@ -32,12 +32,12 @@ const NumberGenerator = () => {
     <div>
       <div>
         <div>Current Number</div>
-        <div>{state.currentNumber}</div>
+        <div data-testid="currentNo">{state.currentNumber}</div>
       </div>
-      <Button onClick={generateNumber}>Generate Number</Button>
+      <Button onClick={generateNumber} data-testid="btn">Generate Number</Button>
       <div>
         <div>Previous Number</div>
-        <div>{state.prevNumber}</div>
+        <div data-testid="previousNo">{state.prevNumber}</div>
       </div>
     </div>
   );
