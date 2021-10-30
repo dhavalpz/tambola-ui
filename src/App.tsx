@@ -1,16 +1,23 @@
 import React from "react";
-import NumberGenerator from "./components/NumberGenerator";
-import "./App.css";
-import Board from "./components/Board";
-/**
- * Home Page of the Application
- * @return {JSX.Element}
- */
+import { Theme } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import { Header } from "./components/Header/Header";
+
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    height: "100vh",
+    background: theme.palette.background.default,
+  },
+}));
+
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
+    <div className={classes.root}>
+      <Header />
       <NumberGenerator />
       <Board />
+
     </div>
   );
 }

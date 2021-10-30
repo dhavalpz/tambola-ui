@@ -13,7 +13,11 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    "require-jsdoc": 0,
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-unused-vars": "off",
+  },
   settings: {
     react: {
       version: "latest",
