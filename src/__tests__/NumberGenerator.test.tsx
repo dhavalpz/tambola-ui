@@ -15,23 +15,23 @@ describe("Current Number", () => {
   });
 });
 
-describe("Previous Number",()=>{
-it("should null be the initial value of previous number",()=>{
-    render(<NumberGenerator/>);
-    const value=screen.getByTestId(/previousNo/i);
+describe("Previous Number", () => {
+  it("should null be the initial value of previous number", () => {
+    render(<NumberGenerator />);
+    const value = screen.getByTestId(/previousNo/i);
     expect(value).toHaveTextContent("");
   });
 });
 
-describe("Button",()=>{
-it("should have a button value",()=>{
-    render(<NumberGenerator/>);
-    const btn=screen.getByTestId(/btn/i);
+describe("Button", () => {
+  it("should have a button value", () => {
+    render(<NumberGenerator />);
+    const btn = screen.getByTestId(/btn/i);
     expect(btn).toHaveTextContent("Generate Number");
   });
-  it("should current number generated on button trigger",()=>{
-    const {getByTestId}= render(<NumberGenerator />);
-    fireEvent.click(getByTestId('btn'));
-    expect(getByTestId('btn').innerHTML).not.toBeNull();
+  it("should current number generated on button trigger", () => {
+    const { getByTestId } = render(<NumberGenerator />);
+    fireEvent.click(getByTestId("btn"));
+    expect(getByTestId("btn").innerHTML).not.toBeNull();
   });
 });

@@ -8,8 +8,8 @@ interface State {
   pickedNumbers: number[];
 }
 
-const NumberGenerator = ({onClick}:any) => {
-  const [state, setState] = useState<State>({
+const NumberGenerator:React.FC = () => {
+  const [number, setNumber] = useState<State>({
     prevNumber: null,
     currentNumber: 0,
     pickedNumbers: [],
@@ -17,27 +17,29 @@ const NumberGenerator = ({onClick}:any) => {
 
   const generateNumber = useCallback(() => {
     const randomNumber = random(START_VALUE, END_VALUE);
-    if (state.pickedNumbers.includes(randomNumber)) {
+    if (number.pickedNumbers.includes(randomNumber)) {
       generateNumber();
     } else {
-      setState({
-        prevNumber: state.currentNumber,
+      setNumber({
+        prevNumber: number.currentNumber,
         currentNumber: randomNumber,
-        pickedNumbers: [...state.pickedNumbers, randomNumber],
+        pickedNumbers: [...number.pickedNumbers, randomNumber],
       });
     }
-  }, [state.prevNumber, state.currentNumber]);
+  }, [number.prevNumber, number.currentNumber]);
 
   return (
     <div>
       <div>
         <div>Current Number</div>
-        <div data-testid="currentNo">{state.currentNumber}</div>
+        <div data-testid="currentNo">{number.currentNumber}</div>
       </div>
-      <Button onClick={generateNumber} data-testid="btn">Generate Number</Button>
+      <Button onClick={generateNumber} data-testid="btn">
+        Generate Number
+      </Button>
       <div>
         <div>Previous Number</div>
-        <div data-testid="previousNo">{state.prevNumber}</div>
+        <div data-testid="previousNo">{number.prevNumber}</div>
       </div>
     </div>
   );
