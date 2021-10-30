@@ -1,16 +1,11 @@
 import React from "react";
-import NumberGenerator from "./components/NumberGenerator";
 import "./App.css";
 /**
  * Home Page of the Application
  * @return {JSX.Element}
  */
 function App() {
-  return (
-    <div className="App">
-      <NumberGenerator />
-    </div>
-  );
+  return <div className="App">hello</div>;
 }
 
 export default App;
