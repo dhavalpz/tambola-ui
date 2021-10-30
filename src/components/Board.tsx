@@ -1,12 +1,10 @@
 import React from "react";
 import { Grid, Paper } from "@mui/material";
-
-const formatNumber: (num: number) => string = (num: number) =>
-  num === 0 ? "_" : num < 10 ? `0${num}` : `${num}`;
+import { formatNumber, LIMIT } from "../util/utility";
 
 const Board: React.FC = () => {
   const arr: Array<number> = React.useMemo(
-    () => Array.from({ length: 90 }, (_) => 0),
+    () => Array.from({ length: LIMIT }, (_) => 0),
     []
   );
 
