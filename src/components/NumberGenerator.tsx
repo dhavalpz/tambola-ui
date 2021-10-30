@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import random from "lodash.random";
 import { Button } from "@mui/material";
-
+import {startValue, endValue } from '../util/utility';
 interface State {
   prevNumber: null | number;
   currentNumber: null | number;
@@ -16,7 +16,7 @@ const NumberGenerator = () => {
   });
 
   const generateNumber = useCallback(() => {
-    const randomNumber = random(1, 90);
+    const randomNumber = random(startValue, endValue);
     if (state.pickedNumbers.includes(randomNumber)) {
       generateNumber();
     } else {
