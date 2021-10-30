@@ -2,10 +2,7 @@ import React from "react";
 import { Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Header } from "./components/Header/Header";
-/**
- * Home Page of the Application
- * @return {JSX.Element}
- */
+
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     height: "100vh",

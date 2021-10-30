@@ -4,7 +4,6 @@ import {
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
 import { themeCreator } from "./Theme/BaseTheme";
-import { CssBaseline } from "@mui/material";
 
 const ThemeContext = React.createContext((_: string) => {});
 
@@ -27,10 +26,7 @@ const ThemeProvider: React.FC = (props) => {
 
   return (
     <ThemeContext.Provider value={setTheme}>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <main>{props.children}</main>
-      </MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>{props.children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );
 };
