@@ -1,6 +1,6 @@
 import { formatNumber } from "./utility";
 
-describe("testinjg utility methods", () => {
+describe("testing utility methods", () => {
   it("should format number 0 to _", () => {
     expect(formatNumber(0)).toStrictEqual("_");
   });
