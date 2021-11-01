@@ -1,10 +1,11 @@
 import React from "react";
 import { Grid, Paper } from "@mui/material";
-import { formatNumber, LIMIT } from "../util/utility";
+import { formatNumber } from "../../util/utility";
+import { END_VALUE } from "../../util/config";
 
 const Board: React.FC = () => {
   const arr: Array<number> = React.useMemo(
-    () => Array.from({ length: LIMIT }, (_) => 0),
+    () => Array.from({ length: END_VALUE }, (_) => 0),
     []
   );
 
