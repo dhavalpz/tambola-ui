@@ -1,6 +1,6 @@
-export class NumberGeneratorEvent{
-    args: number;
-    constructor(args:number){
-        this.args=args;
-    }
+export class OnClickEvent {
+  args: number;
+  constructor(args: number) {
+    this.args = args;
+  }
 }
