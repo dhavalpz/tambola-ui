@@ -2,6 +2,9 @@ import React, { useCallback, useState } from "react";
 import { random } from "lodash";
 import { Button } from "@mui/material";
 import { START_VALUE, END_VALUE } from "../../util/config";
+import {NumberGeneratorEvent} from "../../util/event/NumberGeneratorEvent";
+import {publish} from "../../util/pubsub/PubSub";
+
 interface State {
   prevNumber: null | number;
   currentNumber: null | number;
@@ -26,8 +29,10 @@ const NumberGenerator: React.FC = () => {
         pickedNumbers: [...number.pickedNumbers, randomNumber],
       });
     }
+    publish(new NumberGeneratorEvent(randomNumber))
   }, [number.prevNumber, number.currentNumber]);
 
+  
   return (
     <>
       <div>
