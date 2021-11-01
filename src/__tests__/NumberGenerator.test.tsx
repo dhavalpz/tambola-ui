@@ -2,13 +2,13 @@ import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import NumberGenerator from "../components/NumberGenerator";
 
-jest.mock("lodash",()=>{
+jest.mock("lodash", () => {
   return {
-    random:()=>{
+    random: () => {
       return 75;
-    }
-  }
-})
+    },
+  };
+});
 
 describe("NumberGenerator", () => {
   it("should render correctly", () => {
@@ -38,11 +38,10 @@ describe("NumberGenerator", () => {
     expect(btn).toHaveTextContent("Generate Number");
   });
   it("should generate number on button triggering", () => {
-    const {getByTestId}=render(<NumberGenerator/>)
+    const { getByTestId } = render(<NumberGenerator />);
 
     fireEvent.click(getByTestId("btn"));
 
     expect(getByTestId("currentNo").innerHTML).toBe("75");
   });
 });
-

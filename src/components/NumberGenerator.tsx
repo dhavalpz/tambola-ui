@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import {random} from "lodash";
+import { random } from "lodash";
 import { Button } from "@mui/material";
 import { START_VALUE, END_VALUE } from "../util/utility";
 interface State {
