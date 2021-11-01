@@ -3,6 +3,11 @@ import { Header } from "../Header";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { ThemeContext } from "../../ThemeContext";
 
+enum Theme {
+  lightTheme = "lightTheme",
+  darkTheme = "darkTheme",
+}
+
 describe("Header", () => {
   it("Header Match snapshot test", () => {
     const tree = render(<Header />);
@@ -22,7 +27,7 @@ describe("Header", () => {
     fireEvent.click(screen.getByTestId("lightButton"));
 
     expect(setThemeName).toHaveBeenCalledTimes(1);
-    expect(setThemeName).toHaveBeenCalledWith("lightTheme");
+    expect(setThemeName).toHaveBeenCalledWith(Theme.lightTheme);
   });
 
   it("should get dark theme ", () => {
@@ -37,6 +42,6 @@ describe("Header", () => {
     fireEvent.click(screen.getByTestId("darkButton"));
 
     expect(setThemeName).toHaveBeenCalledTimes(1);
-    expect(setThemeName).toHaveBeenCalledWith("darkTheme");
+    expect(setThemeName).toHaveBeenCalledWith(Theme.darkTheme);
   });
 });
