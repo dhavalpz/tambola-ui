@@ -10,16 +10,10 @@ const Board: React.FC = () => {
   );
 
   return (
-    <Grid
-      container
-      columns={10}
-      padding="20px"
-      rowSpacing={2}
-      columnSpacing={2}
-    >
+    <Grid container columns={10} padding={3} rowSpacing={2} columnSpacing={2}>
       {arr.map((num: number, index: number) => (
         <Grid item key={index} xs={2} md={1}>
-          <Paper sx={{ border: "2px solid red", padding: "5px" }} elevation={3}>
+          <Paper sx={{ padding: 0.5, textAlign: "center" }} elevation={3}>
             {formatNumber(num)}
           </Paper>
         </Grid>

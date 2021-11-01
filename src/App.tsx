@@ -8,12 +8,11 @@ import Board from "./components/Board/Board";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    height: "100vh",
+    height: "100%",
     background: theme.palette.background.default,
   },
 }));
-
-function App() {
+const App = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -22,6 +21,6 @@ function App() {
       <Board />
     </div>
   );
-}
+};
 
 export default App;
