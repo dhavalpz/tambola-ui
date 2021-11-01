@@ -11,8 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     background: theme.palette.background.default,
   },
 }));
-
-function App() {
+const App = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -21,6 +20,6 @@ function App() {
       <Board />
     </div>
   );
-}
+};
 
 export default App;
