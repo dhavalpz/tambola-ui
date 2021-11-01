@@ -13,7 +13,7 @@ interface State {
 
 const NumberGenerator: React.FC = () => {
   const [number, setNumber] = useState<State>({
-    prevNumber: null,
+    prevNumber: 0,
     currentNumber: 0,
     pickedNumbers: [],
   });
