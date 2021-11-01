@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../Header";
+import Header from "../Header";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { ThemeContext } from "../../ThemeContext";
 
