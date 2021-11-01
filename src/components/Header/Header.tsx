@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Brightness2OutlinedIcon from "@mui/icons-material/Brightness2Outlined";
 import Brightness7OutlinedIcon from "@mui/icons-material/Brightness7Outlined";
-import { ThemeContext } from "../ThemeSetter";
+import { ThemeContext } from "../ThemeContext";
 
 enum Theme {
   lightTheme = "lightTheme",
