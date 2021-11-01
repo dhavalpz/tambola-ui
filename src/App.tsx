@@ -19,7 +19,6 @@ function App() {
       <Header />
       <NumberGenerator />
       <Board />
-
     </div>
   );
 }
