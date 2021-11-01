@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
-import { formatNumber, LIMIT } from "../util/utility";
+import { formatNumber } from "../util/utility";
+import { LIMIT } from "../util/config";
 
 const Board: React.FC = () => {
   const arr: Array<number> = React.useMemo(
@@ -9,7 +10,7 @@ const Board: React.FC = () => {
   );
 
   return (
-    <Paper>
+    <Paper elevation={5} sx={{ margin: "50px" }}>
       <Grid
         container
         columns={10}

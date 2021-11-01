@@ -1,10 +1,11 @@
 import React from "react";
-import Board from "./Board";
+import Board from "../Board";
 import { render } from "@testing-library/react";
 
-describe("testing board", () => {
-  it("should render empty board", () => {
+describe("Board", () => {
+  it("should render board with _", () => {
     const tree = render(<Board />);
+
     expect(tree).toMatchSnapshot();
   });
 });
