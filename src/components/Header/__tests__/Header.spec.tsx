@@ -9,7 +9,7 @@ enum Theme {
 }
 
 describe("Header", () => {
-  it("Header Match snapshot test", () => {
+  it("Header render correctly ", () => {
     const tree = render(<Header />);
 
     expect(tree).toMatchSnapshot();
