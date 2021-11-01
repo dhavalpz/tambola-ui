@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { random } from "lodash";
 import { Button } from "@mui/material";
-import { START_VALUE, END_VALUE } from "../../util/utility";
+import { START_VALUE, END_VALUE } from "../../util/config";
 interface State {
   prevNumber: null | number;
   currentNumber: null | number;
