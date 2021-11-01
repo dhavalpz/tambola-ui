@@ -1,14 +1,14 @@
 import React, { useCallback, useState } from "react";
 import random from "lodash.random";
 import { Button } from "@mui/material";
-import { START_VALUE, END_VALUE } from "../util/utility";
+import { START_VALUE, END_VALUE } from "../../util/utility";
 interface State {
   prevNumber: null | number;
   currentNumber: null | number;
   pickedNumbers: number[];
 }
 
-const NumberGenerator:React.FC = () => {
+const NumberGenerator: React.FC = () => {
   const [number, setNumber] = useState<State>({
     prevNumber: null,
     currentNumber: 0,

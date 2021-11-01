@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Paper } from "@mui/material";
-import { formatNumber, LIMIT } from "../util/utility";
+import { formatNumber, LIMIT } from "../../util/utility";
 
 const Board: React.FC = () => {
   const arr: Array<number> = React.useMemo(

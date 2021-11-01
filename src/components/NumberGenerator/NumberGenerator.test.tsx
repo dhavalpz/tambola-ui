@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import NumberGenerator from "../components/NumberGenerator";
+import NumberGenerator from "./NumberGenerator";
 
 describe("Current Number", () => {
   it("should render text 'Current Number' ", () => {
