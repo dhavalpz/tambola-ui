@@ -2,36 +2,46 @@ import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import NumberGenerator from "./NumberGenerator";
 
-describe("Current Number", () => {
-  it("should render text 'Current Number' ", () => {
-    render(<NumberGenerator />);
-    const text = screen.getByText(/Current Number/i);
-    expect(text).toBeInTheDocument();
+jest.mock("lodash", () => {
+  return {
+    random: () => {
+      return 75;
+    },
+  };
+});
+
+describe("NumberGenerator", () => {
+  it("should render correctly", () => {
+    const tree = render(<NumberGenerator />);
+
+    expect(tree).toMatchSnapshot();
   });
   it("should zero be the initial value of current number", () => {
     render(<NumberGenerator />);
-    const number = screen.getByTestId(/currentNo/i);
+
+    const number = screen.getByTestId("currentNo");
+
     expect(number).toHaveTextContent("0");
   });
-});
-
-describe("Previous Number", () => {
   it("should null be the initial value of previous number", () => {
     render(<NumberGenerator />);
-    const value = screen.getByTestId(/previousNo/i);
+
+    const value = screen.getByTestId("previousNo");
+
     expect(value).toHaveTextContent("");
   });
-});
-
-describe("Button", () => {
-  it("should have a button value", () => {
+  it("should button name showing as per requirement or not", () => {
     render(<NumberGenerator />);
-    const btn = screen.getByTestId(/btn/i);
+
+    const btn = screen.getByTestId("btn");
+
     expect(btn).toHaveTextContent("Generate Number");
   });
-  it("should current number generated on button trigger", () => {
+  it("should generate number on button triggering", () => {
     const { getByTestId } = render(<NumberGenerator />);
+
     fireEvent.click(getByTestId("btn"));
-    expect(getByTestId("btn").innerHTML).not.toBeNull();
+
+    expect(getByTestId("currentNo").innerHTML).toBe("75");
   });
 });
