@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
-import random from "lodash.random";
+import { random } from "lodash";
 import { Button } from "@mui/material";
-import { START_VALUE, END_VALUE } from "../util/utility";
+import { START_VALUE, END_VALUE } from "../../util/config";
 interface State {
   prevNumber: null | number;
   currentNumber: null | number;
@@ -29,7 +29,7 @@ const NumberGenerator: React.FC = () => {
   }, [number.prevNumber, number.currentNumber]);
 
   return (
-    <div>
+    <>
       <div>
         <div>Current Number</div>
         <div data-testid="currentNo">{number.currentNumber}</div>
@@ -41,7 +41,7 @@ const NumberGenerator: React.FC = () => {
         <div>Previous Number</div>
         <div data-testid="previousNo">{number.prevNumber}</div>
       </div>
-    </div>
+    </>
   );
 };
 
