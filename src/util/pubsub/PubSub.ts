@@ -5,15 +5,16 @@ export function publish(event: { args: number }) {
   document.dispatchEvent(nativeEvent);
 }
 
-// export function subscribe(eventClass:any, handler:any) {
-//     const modifiedHandler=(event:any)=>{
-
-//       handler(event.detail)
-//     }
-//     document.addEventListener(eventClass.name, modifiedHandler, { passive: true });
-//     return {
-//       unsubscribe: function unsubscribe() {
-//         document.removeEventListener(eventClass.name,handler);
-//       },
-//     };
-//   }
+export function subscribe(eventClass: any, handler: any) {
+  const modifiedHandler = (event: any) => {
+    handler(event.detail);
+  };
+  document.addEventListener(eventClass.name, modifiedHandler, {
+    passive: true,
+  });
+  return {
+    unsubscribe: function unsubscribe() {
+      document.removeEventListener(eventClass.name, handler);
+    },
+  };
+}
