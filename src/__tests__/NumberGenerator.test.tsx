@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import NumberGenerator from "./NumberGenerator";
+import NumberGenerator from "../components/NumberGenerator/NumberGenerator";
 
 jest.mock("lodash", () => {
   return {

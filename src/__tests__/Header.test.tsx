@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../Header";
+import Header from "../components/Header/Header";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { ThemeContext } from "../../ThemeContext";
+import { ThemeContext } from "../components/ThemeContext";
 
 enum Theme {
   lightTheme = "lightTheme",
@@ -9,7 +9,7 @@ enum Theme {
 }
 
 describe("Header", () => {
-  it("Header render correctly ", () => {
+  it("Header Match Snapshot ", () => {
     const tree = render(<Header />);
 
     expect(tree).toMatchSnapshot();

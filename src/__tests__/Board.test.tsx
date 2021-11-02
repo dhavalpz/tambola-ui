@@ -1,5 +1,5 @@
 import React from "react";
-import Board from "./Board";
+import Board from "../components/Board/Board";
 import { render } from "@testing-library/react";
 
 describe("testing board", () => {
