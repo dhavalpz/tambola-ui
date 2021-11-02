@@ -1,4 +1,4 @@
-import { formatNumber } from "./utility";
+import { formatNumber } from "../util/utility";
 
 describe("testing utility methods", () => {
   it("should format number 0 to _", () => {
