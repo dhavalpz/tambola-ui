@@ -8,12 +8,18 @@ const Board: React.FC = () => {
   const [numbers, setNumbers] = React.useState<Array<number>>(
     new Array(END_VALUE).fill(0)
   );
-  React.useEffect(() => {
-    const handler = subscribe(OnClickEvent, (num: number) => {
+
+  const callback = React.useCallback(
+    (num: number) => {
       const newNumbers = [...numbers];
       newNumbers[num - 1] = num;
       setNumbers(newNumbers);
-    });
+    },
+    [numbers]
+  );
+
+  React.useEffect(() => {
+    const handler = subscribe(OnClickEvent, callback);
     return () => {
       handler.unsubscribe();
     };
@@ -24,7 +30,7 @@ const Board: React.FC = () => {
       {numbers.map((num: number, index: number) => (
         <Grid item key={index} xs={2} md={1}>
           <Paper sx={{ padding: 0.5, textAlign: "center" }} elevation={3}>
-            {formatNumber(num)}
+            <p data-testid={`cell-${index}`}>{formatNumber(num)}</p>
           </Paper>
         </Grid>
       ))}
