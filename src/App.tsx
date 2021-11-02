@@ -8,7 +8,7 @@ import Board from "./components/Board/Board";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    height: "100vh",
+    height: "100%",
     background: theme.palette.background.default,
   },
 }));

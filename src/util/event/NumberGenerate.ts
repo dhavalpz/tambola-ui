@@ -1,4 +1,4 @@
-export class OnClickEvent {
+export class NumberGenerate {
   args: number;
   constructor(args: number) {
     this.args = args;
