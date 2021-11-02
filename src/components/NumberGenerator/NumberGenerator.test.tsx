@@ -11,7 +11,7 @@ jest.mock("lodash", () => {
 });
 
 describe("NumberGenerator", () => {
-  it("should render correctly", () => {
+  it("should match snapshot", () => {
     const tree = render(<NumberGenerator />);
 
     expect(tree).toMatchSnapshot();
