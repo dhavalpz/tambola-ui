@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
 import Header from "./components/Header/Header";
 import NumberGenerator from "./components/NumberGenerator/NumberGenerator";
 import Board from "./components/Board/Board";

@@ -3,7 +3,7 @@ import { random } from "lodash";
 import { Button, Grid, Paper } from "@mui/material";
 import { START_VALUE, END_VALUE } from "../../util/config";
 import { NumberGenerate } from "../../util/event/NumberGenerate";
-import { publish } from "../../util/pubsub/pubSub";
+import { publish } from "../../util/pubsub/PubSub";
 
 interface State {
   prevNumber: null | number;

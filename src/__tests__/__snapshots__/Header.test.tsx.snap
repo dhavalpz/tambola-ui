@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header Header Match snapshot test 1`] = `
+exports[`Header Header Match Snapshot  1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
