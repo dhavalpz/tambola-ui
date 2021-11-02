@@ -1,7 +1,10 @@
 import React, { useCallback, useState } from "react";
 import { random } from "lodash";
-import { Button } from "@mui/material";
+import { Button, Grid, Paper } from "@mui/material";
 import { START_VALUE, END_VALUE } from "../../util/config";
+import { NumberGenerate } from "../../util/event/NumberGenerate";
+import { publish } from "../../util/pubsub/pubSub";
+
 interface State {
   prevNumber: null | number;
   currentNumber: null | number;
@@ -10,7 +13,7 @@ interface State {
 
 const NumberGenerator: React.FC = () => {
   const [number, setNumber] = useState<State>({
-    prevNumber: null,
+    prevNumber: 0,
     currentNumber: 0,
     pickedNumbers: [],
   });
@@ -26,22 +29,43 @@ const NumberGenerator: React.FC = () => {
         pickedNumbers: [...number.pickedNumbers, randomNumber],
       });
     }
+    publish(new NumberGenerate(randomNumber));
   }, [number.prevNumber, number.currentNumber]);
 
   return (
-    <>
-      <div>
-        <div>Current Number</div>
-        <div data-testid="currentNo">{number.currentNumber}</div>
-      </div>
-      <Button onClick={generateNumber} data-testid="btn">
-        Generate Number
-      </Button>
-      <div>
-        <div>Previous Number</div>
-        <div data-testid="previousNo">{number.prevNumber}</div>
-      </div>
-    </>
+    <Grid container columns={3} p={10} mt={10}>
+      <Grid item xs={1}>
+        <Paper sx={{ textAlign: "center", p: 10, fontSize: 20 }}>
+          Current Number
+        </Paper>
+        <Paper
+          sx={{ textAlign: "center", fontSize: 40, p: 5 }}
+          data-testid="currentNo"
+        >
+          {number.currentNumber}
+        </Paper>
+      </Grid>
+      <Grid item xs={1} sx={{ textAlign: "center" }} pt={18} pl={5} pr={5}>
+        <Button
+          onClick={generateNumber}
+          data-testid="btn"
+          sx={{ color: "#66bb6a", border: "2px groove green", fontSize: 11 }}
+        >
+          Generate Number
+        </Button>
+      </Grid>
+      <Grid item xs={1}>
+        <Paper sx={{ textAlign: "center", p: 10, fontSize: 20 }}>
+          Previous Number
+        </Paper>
+        <Paper
+          sx={{ textAlign: "center", fontSize: 40, p: 5 }}
+          data-testid="previousNo"
+        >
+          {number.prevNumber}
+        </Paper>
+      </Grid>
+    </Grid>
   );
 };
 

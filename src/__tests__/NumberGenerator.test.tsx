@@ -11,7 +11,7 @@ jest.mock("lodash", () => {
 });
 
 describe("NumberGenerator", () => {
-  it("should render correctly", () => {
+  it("should match snapshot", () => {
     const tree = render(<NumberGenerator />);
 
     expect(tree).toMatchSnapshot();
@@ -23,12 +23,12 @@ describe("NumberGenerator", () => {
 
     expect(number).toHaveTextContent("0");
   });
-  it("should null be the initial value of previous number", () => {
+  it("should zero be the initial value of previous number", () => {
     render(<NumberGenerator />);
 
     const value = screen.getByTestId("previousNo");
 
-    expect(value).toHaveTextContent("");
+    expect(value).toHaveTextContent("0");
   });
   it("should button name showing as per requirement or not", () => {
     render(<NumberGenerator />);

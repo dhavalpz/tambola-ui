@@ -15,6 +15,7 @@ const lightTheme = createTheme({
     },
     divider: "rgba(120,144,156,0.34)",
   },
+  spacing: (value: number) => value * 2,
 });
 
 export { lightTheme };

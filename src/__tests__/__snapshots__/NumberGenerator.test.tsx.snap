@@ -32,7 +32,9 @@ Object {
         </div>
         <div
           data-testid="previousNo"
-        />
+        >
+          0
+        </div>
       </div>
     </div>
   </body>,
@@ -64,7 +66,9 @@ Object {
       </div>
       <div
         data-testid="previousNo"
-      />
+      >
+        0
+      </div>
     </div>
   </div>,
   "debug": [Function],
